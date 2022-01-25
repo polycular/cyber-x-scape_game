@@ -1,0 +1,77 @@
+/* Color schema */
+:root {
+  --color_main: #1d83d4;
+  --color_action: #2196f3;
+  --color_accent: #00ff83;
+
+  --color_grey: #b4bcc0;
+  --color_grey_light: #cfd8dc;
+
+  --color_world: #6ebaa7;
+  --color_neon: #f0007c; /* Winter Purple */
+
+  --color-correct: #12eb53;
+  --bg-gameover: #333;
+}
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: sans-serif, system-ui;
+  color: #333;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+header.landing {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  height: 5em;
+  margin: 1rem;
+  padding: 0.5em 1em;
+  margin-bottom: 1rem;
+  color: var(--color_main);
+  background-color: var(--color_grey_light);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px var(--color_grey_light);
+}
+header.landing a,
+header.landing img {
+  height: 100%;
+}
+
+@media only screen and (max-width: 35em) {
+  header.landing {
+    justify-content: center;
+  }
+  header.landing img.lettering {
+    display: none;
+  }
+}
+
+main {
+  line-height: 1.4;
+  letter-spacing: 0.1ch;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+canvas.a-canvas.a-grab-cursor:hover {
+  cursor: url('/images/cursor/open-hand.svg') 20 20, grab !important;
+}
+
+canvas.a-canvas.a-grab-cursor:active, .a-grabbing {
+  cursor: url('/images/cursor/hand.svg') 20 20, grabbing !important;
+}
+
+canvas.a-canvas.a-grab-cursor.a-mouse-cursor-hover {
+  cursor: url('/images/cursor/precision.svg') 20 20, crosshair !important;
+}

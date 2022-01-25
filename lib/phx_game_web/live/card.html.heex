@@ -1,0 +1,20 @@
+<div id="game_screen">
+  <%= unless @done do %>
+    <PhxGameWeb.GameFrame.flashcard learning={@current_game.learning} />
+
+    <button phx-click="next" class="start_button">
+      Weiter
+    </button>
+  <% else %>
+    <div class="container">
+      <div id="message">
+        <div class="content">
+          <h1>Fertig!</h1>
+
+          <a href="/" class="rsaquo link">Startseite</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div id="scroll_down" style="display: none">👇</div>
+</div>

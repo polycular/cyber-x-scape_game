@@ -1,0 +1,43 @@
+footer {
+  margin: 1rem;
+}
+
+footer #legal {
+  padding: 0.2em 0.5em;
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+}
+footer #legal a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer #banner {
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  color: #555;
+  background-color: var(--color_grey_light);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px var(--color_grey_light);
+}
+
+footer #banner .logo {
+  max-height: 3em;
+  margin-top: 0.5em;
+}
+
+@media only screen and (max-width: 45em) {
+  footer #banner {
+    flex-direction: column;
+  }
+  footer #banner .logo {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,16 @@
+.rsaquo::before {
+  content: "\00203a";
+  display: inline-block;
+  margin-right: .2em;
+}
+
+.button {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: white;
+  background-color: var(--color_main);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px var(--color_grey);
+}

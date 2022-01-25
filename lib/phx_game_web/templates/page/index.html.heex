@@ -1,0 +1,40 @@
+<header class="landing">
+  <a href="/">
+    <img src={Routes.static_path(@conn, "/images/logo.svg")} class="logo" alt="cyberXscape Logo">
+  </a>
+  <img src={Routes.static_path(@conn, "/images/lettering.svg")} class="lettering" alt="cyberXscape Schriftzug">
+</header>
+
+<section class="landing">
+  <div>
+    <div class="logo_2">
+      <img src={Routes.static_path(@conn, "/images/logo.svg")} class="logo" alt="cyberXscape Logo"><br>
+      <img src={Routes.static_path(@conn, "/images/lettering.svg")} class="lettering" alt="cyberXscape Schriftzug">
+    </div>
+
+    <h2>
+      ⚠chtung!<br>
+      Cybercrime hat dich im Visier!
+    </h2>
+
+    <p>
+      Hast du das Zeug allen Cyberattacken Stand zu halten?<br>
+      In cyberXscape wirst du in einem fesselnden digitalen Escape Game gefordert.<br>
+      Deine Aufgabe ist es alle Sicherheitslücken rasch aufzudecken.<br><br>
+
+      cyberXscape wird deine Kompetenz im Bereich Cybersicherheit definitiv steigern.<br>
+      Bist du bereit?
+    </p>
+
+    ⚠️<br>Beta<br><br>
+
+    <%= link "Klar", to: Routes.live_path(@conn, PhxGameWeb.Game), class: "start_button" %>
+
+    <h3>Themen</h3>
+
+    <p>
+      In der aktuellen Fassung sensibilisiert cyberXscape im Bereich<br>
+      Passwörter, unversperrte Geräte und sensible Daten.
+    </p>
+  </div>
+</section>

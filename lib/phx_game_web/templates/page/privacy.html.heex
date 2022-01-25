@@ -1,0 +1,88 @@
+<header class="landing">
+  <a href="/">
+    <img src={Routes.static_path(@conn, "/images/logo.svg")} class="logo" alt="cyberXscape Logo">
+  </a>
+  <img src={Routes.static_path(@conn, "/images/lettering.svg")} class="lettering" alt="cyberXscape Schriftzug">
+</header>
+
+<section class="content_page limit_width">
+  <h1>Datenschutz</h1>
+
+  <p>
+    Datenschutz? Ja bitte gerne! Wir schützen natürlich mit bestem Gewissen alle deine persönlichen Daten.
+    Bitte sei so nett und schütze aber auch du deine Daten. Überlege weiße wem gegenüber du dich offen preis gibst.
+    Oder sei zumindest so fair und gib allen Mitspielern das gleiche Recht an deinen Daten profitieren zu dürfen.🐙<br>
+    PS: Wir haben keine Interesse in dem Genre mitzuspielen.
+  </p>
+
+  <b>Welche Daten werden gegebenenfalls von uns verarbeitet</b><br><br>
+
+  Durch eigene Angabe:
+  <ul>
+    <li>Name</li>
+    <li>E-Mail Adresse</li>
+    <li>Messenger ID</li>
+  </ul>
+
+  Durch technische Verarbeitung:
+  <ul>
+    <li>Session Cookie</li>
+    <li>Spieler ID</li>
+    <li>Spieldauer</li>
+  </ul>
+
+  <b>Zweck</b>
+  <p>
+    Wir verarbeite diese Daten ausschließlich für Support, Verbesserung und Vermarktung von cyberXscape.
+  </p>
+
+  <b>Dauer der Aufbewahrung</b>
+  <p>
+    Die Daten werden nur für die notwendige Dauer gespeichert.
+    Zumindest solange eine aufrechte Spielsession oder Kommunikation mit uns besteht.<br><br>
+
+    Im Falle von rechtlich längeren Aufbewahrungsfristen, werden die Daten länger gespeichert.
+    Die Daten können nach Löschung für weitere 3 Wochen in automatischen Backups enthalten sein.
+  </p>
+
+  <b>Schutzmaßnahmen</b>
+  <p>
+    Wir prüfen regelmäßig den Stand der Technik und wenden neue Maßnahmen sorgfältig und zeitnah an.
+  </p>
+
+  <b>Gefahren</b>
+  <p>
+    Der Umgang mit persönlichen Daten birgt Gefahren.
+    Daten werden immer wieder trotz Vorkehrungsmaßnahmen aufgrund von Sicherheitslücken von Dritten entwendet.<br>
+    Während des Transports von Daten können diese von Dritten gezielt abgefangen oder entschlüsselt werden.
+    Es ist möglich, dass Metadaten im Transportweg protokolliert werden. Mit diesen kann ein Profil deiner digitalen Person erstellt werden.
+  </p>
+
+  <b>Deine Rechte</b>
+  <p>
+    Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Einspruch.<br><br>
+
+    Du bist der Meinung wir habe dein Datenschutzrecht verletzt?<br>
+    Bitte setze dich mit uns in Verbindung!<br><br>
+
+    Natürlich besteht aber auch das unpersönliche Recht, dich bei der Datenschutzbehörde zu beschweren.<br>
+    Österreich: <a href="https://www.dsb.gv.at/kontakt" target="_blank">dsb.gv.at/kontakt</a> /
+    andere Länder: <a href="https://ec.europa.eu/justice/article-29/structure/data-protection-authorities/index_en.htm" target="_blank">ec.europa.eu</a>
+  </p>
+
+  <b>Kontakt</b>
+  <p>
+    <a class="rsaquo" href={PhxGameWeb.Router.Helpers.page_path(@conn, :imprint)}>cyber-x-scape.at/impressum</a>
+  </p>
+
+  <b>Verantwortlich</b>
+  <p>
+    Thomas Layer-Wagner<br>
+    <a class="rsaquo" href={PhxGameWeb.Router.Helpers.page_path(@conn, :imprint)}>cyber-x-scape.at/impressum</a>
+  </p>
+
+  <b>Version</b>
+  <p>
+    2022-01-14
+  </p>
+</section>

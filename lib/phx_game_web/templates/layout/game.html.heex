@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "cyberXscape", suffix: " / Cybercrime Escape Game" %>
+    <link phx-track-static rel="icon" href={Routes.static_path(@conn, "/images/logo.svg")} />
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")} />
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+
+    <script defer data-domain="cyber-x-scape.at" src="https://plausible.polycular.com/js/plausible.js"></script>
+  </head>
+
+  <body>
+    <%= @inner_content %>
+  </body>
+</html>

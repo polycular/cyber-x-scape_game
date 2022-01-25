@@ -1,0 +1,135 @@
+<%= unless @started do %>
+<div id="game_screen" class="intro">
+  <PhxGameWeb.GameFrame.header countdown={@countdown} task={@current_game.title} difficulty={@current_game.difficulty} />
+  <div id="intro">
+    <h1>Intro</h1>
+    <p class="content">
+      ↑ Oben findest du deine verbleibende <b>Zeit ⏲️</b> und <b>Aufgabe</b> + Schwierigkeit 🥇🥈🥉.<br><br>
+      In den Szenen kannst du dich frei bewegen und umschauen.<br><br>
+      Augen auf. Auf Los geht's los!
+    </p>
+  </div>
+
+  <button phx-click="start" class="start_button">Los</button>
+</div>
+<% end %>
+
+<%= if @started and not @solved and not @game_over do %>
+<div id="game_screen">
+  <PhxGameWeb.GameFrame.header countdown={@countdown} task={@current_game.title} difficulty={@current_game.difficulty} />
+
+  <%# Scene 1 %>
+  <%= if @current_game.scene == "FU_L1" do %>
+  <PhxGameWeb.Scene.FindUnlocked.level_1 />
+  <% end %>
+  <%= if @current_game.scene == "FU_L2" do %>
+  <PhxGameWeb.Scene.FindUnlocked.level_2 />
+  <% end %>
+  <%= if @current_game.scene == "FU_L3" do %>
+  <PhxGameWeb.Scene.FindUnlocked.level_3 />
+  <% end %>
+
+  <%# Scene 2 %>
+  <%= if @current_game.scene == "FP_L1" do %>
+  <PhxGameWeb.Scene.FindPassword.level_1 />
+  <% end %>
+  <%= if @current_game.scene == "FP_L2" do %>
+  <PhxGameWeb.Scene.FindPassword.level_2 />
+  <% end %>
+  <%= if @current_game.scene == "FP_L3" do %>
+  <PhxGameWeb.Scene.FindPassword.level_3 />
+  <% end %>
+
+  <%# Scene 3 %>
+  <%= if @current_game.scene == "SC_L1" do %>
+  <PhxGameWeb.Scene.StoreConfidential.level_1 />
+  <% end %>
+  <%= if @current_game.scene == "SC_L2" do %>
+  <PhxGameWeb.Scene.StoreConfidential.level_2 />
+  <% end %>
+  <%= if @current_game.scene == "SC_L3" do %>
+  <PhxGameWeb.Scene.StoreConfidential.level_3 />
+  <% end %>
+
+  <div id="nipple_joystick" phx-update="ignore"></div>
+</div>
+<% end %>
+
+<%= if @solved and not @game_done do %>
+<div id="game_screen">
+  <div class="container">
+    <div id="message">
+      <header>
+        <span class="icon">💣</span>
+        <span class="text">Tage ohne Zwischenfall: <%= assigns.score %></span>
+      </header>
+      <div class="content">
+        <h1>Gratulation! Gut gemacht.</h1>
+        <h2>Angriff vereitelt.</h2>
+      </div>
+    </div>
+
+    <div id="scroll_down">👇</div>
+
+    <PhxGameWeb.GameFrame.flashcard learning={@current_game.learning} />
+
+    <PhxGameWeb.GameFrame.flashcard_challenge>
+      <PhxGameWeb.GameFrame.emoji_challenge />
+    </PhxGameWeb.GameFrame.flashcard_challenge>
+  </div>
+</div>
+<% end %>
+
+<%= if @solved and @game_done do %>
+<div id="game_screen">
+  <div class="container">
+    <div id="message">
+      <header>
+        <span class="icon">🥁</span>
+        <span class="icon">🏆</span>
+        <span class="icon">🎮</span>
+        <span class="icon">🎈</span>
+        <span class="icon">🎉</span>
+      </header>
+
+      <div class="content">
+        <h1>Perfekt!</h1>
+        <h2>Alle Angriffe vereitelt.</h2>
+
+        <p style="text-align: left">
+          Hochachtung!<br>
+          Du konntest vorerst allen Angriffen standhalten.
+          Hoffentlich hast du auch alle Risiko-Lernkarten verinnerlicht.
+          <%= link "Lernkarten nochmal durchblättern", to: PhxGameWeb.Router.Helpers.live_path(PhxGameWeb.Endpoint, PhxGameWeb.Card), class: "rsaquo link" %><br><br>
+
+          Bleib immer auf der Hut.
+        </p>
+      </div>
+    </div>
+
+    <%= link "Nochmal spielen", to: PhxGameWeb.Router.Helpers.live_path(PhxGameWeb.Endpoint, PhxGameWeb.Game), class: "start_button" %>
+  </div>
+</div>
+<% end %>
+
+<%= if @game_over and not @game_done and not @solved do %>
+<div id="game_screen">
+  <div class="container">
+    <div id="message" class="gameover">
+      <header>
+        <span class="icon">💣</span>
+        <span class="text">Tage ohne Zwischenfall: 0</span>
+      </header>
+
+      <div class="content">
+        <h1>Game over!</h1>
+        <h2>Angriff konnte nicht vereitelt werden.</h2>
+      </div>
+    </div>
+
+    <PhxGameWeb.GameFrame.flashcard learning={@current_game.learning} />
+
+    <%= link "Nochmal spielen", to: PhxGameWeb.Router.Helpers.live_path(PhxGameWeb.Endpoint, PhxGameWeb.Game), class: "start_button" %>
+  </div>
+</div>
+<% end %>

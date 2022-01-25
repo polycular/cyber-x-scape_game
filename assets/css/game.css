@@ -1,0 +1,288 @@
+#game_screen {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--color_world);
+}
+#game_screen.intro {
+  width: 100%;
+  min-height: calc(100vh - 5em);
+  padding-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#game_screen .container {
+  display: grid;
+  place-items: center;
+}
+
+header#game {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  margin: 0.5em;
+  padding: 0.5rem;
+  width: calc(100vw - 2em);
+  max-width: 120ch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(211, 211, 211, .8);
+  border-radius: 0.5em;
+  box-shadow: 0 0 4px rgba(211, 211, 211, .8);
+}
+
+header#game div {
+  display: flex;
+  align-items: center;
+}
+header#game .countdown {
+  font-size: 1.8em;
+}
+header#game .icon {
+  font-size: 1.8em;
+}
+
+@media only screen and (max-width: 35em) {
+  header#game {
+    flex-direction: column;
+    align-items: start;
+    align-items: stretch;
+  }
+  header#game .instruction {
+    padding-top: 0.2em;
+    border-top: 1px solid white;
+  }
+}
+
+#intro {
+  margin: 1em;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  width: calc(100vw - 2em);
+  max-width: 120ch;
+  text-align: center;
+  color: white;
+  background-color: #3773bb;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 8px #555
+}
+
+#intro h1 {
+  margin: 0;
+  padding: 0.2em 0.5em;
+  font-size: 1em;
+  font-family: "Courier New", monospace;
+  text-align: right;
+  border-bottom: 1px solid white;
+}
+#intro p {
+  padding: 1em;
+}
+
+@media only screen and (max-width: 35em) {
+  #game_screen.intro {
+    min-height: calc(100vh - 8em);
+    padding-top: 8em;
+  }
+  #intro p {
+    text-align: initial;
+  }
+}
+
+.meta {
+  padding: 1rem;
+  font-size: 0.8em;
+  color: #555;
+  border: 1px dashed;
+  border-radius: 0.5rem;
+}
+
+#message {
+  margin: 1em;
+  width: 50ch;
+  max-width: calc(100vw - 2em);
+  text-align: center;
+  color: white;
+  background-color: #3773bb;
+  border-radius: 0.5em;
+  box-shadow: 3px 3px 8px #555;
+}
+
+#message header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 0.5em;
+  text-align: initial;
+  font-size: 1em;
+  font-family: "Courier New", monospace;
+  border-bottom: 1px solid white;
+}
+#message header .icon {
+  font-size: 1.5em;
+}
+#message header .text {
+  font-weight: bold;
+}
+
+#message .content {
+  padding: 1em;
+}
+
+#message .content h1,
+#message .content h2 {
+  margin: 0;
+  font-family: "Courier New", monospace;
+}
+#message .content h1 {
+  font-size: 1.6em;
+}
+#message .content h2 {
+  font-size: 1.4em;
+}
+
+#message.gameover {
+  background-color: var(--bg-gameover);
+}
+
+#reward {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  z-index: 2;
+  width: 11rem;
+  height: 11rem;
+  background: url('/images/icons/star.svg');
+  animation-name: rotating;
+  animation-duration: 2s;
+}
+@keyframes rotating {
+  0% {
+    transform:rotate(0deg)
+  }
+  to {
+    transform:rotate(1turn)
+  }
+}
+
+#nipple_joystick {
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+  width: 10em;
+  height: 10em;
+  background: no-repeat center/80% url('/images/icons/move.svg') rgba(211, 211, 211, .8);
+  background-size: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(211, 211, 211, .8);
+}
+
+.flashcard {
+  margin: 1em;
+  width: 50ch;
+  max-width: calc(100vw - 2em);
+  color: white;
+  background-color: crimson;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 8px #555;
+}
+
+.flashcard header h1 {
+  margin: 0;
+  padding: 0.2em 0.5em;
+  font-size: 1em;
+  font-family: "Courier New", monospace;
+  text-align: right;
+}
+
+.flashcard header img {
+  display: block;
+  width: 100%;
+}
+
+.flashcard .content {
+  padding: 0.5em;
+}
+
+.flashcard .content h1 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.flashcard .content hr {
+  border: 0;
+  border-top: 1px solid white;
+}
+
+.flashcard .content p {
+  text-align: initial;
+}
+
+.flashcard_challenge {
+  margin: 1em;
+  width: 50ch;
+  max-width: calc(100vw - 2em);
+  text-align: center;
+  color: white;
+  background-color: #3773bb;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 8px #555;
+}
+
+.flashcard_challenge header h1 {
+  margin: 0;
+  padding: 0.2em 0.5em;
+  font-size: 1em;
+  font-family: "Courier New", monospace;
+  text-align: right;
+  border-bottom: 1px solid white;
+}
+
+.flashcard_challenge .content {
+  padding: 0.5em;
+}
+
+.flashcard_challenge .emoji {
+  font-size: 2em;
+  background: none;
+}
+.flashcard_challenge #challenge {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 50ch;
+}
+.flashcard_challenge #result {
+  text-align: center;
+  font-size: 3em;
+}
+.flashcard_challenge #result span {
+  animation-name: rotating;
+  animation-duration: 2s;
+}
+@keyframes rotating {
+  0% {
+    transform:rotate(0deg)
+  }
+  to {
+    transform:rotate(1turn)
+  }
+}
+
+#scroll_down {
+  position: absolute;
+  z-index: 100;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 2em;
+  cursor: pointer;
+}
+@media only screen and (max-width: 35em) {
+  #scroll_down {
+    position: initial;
+  }
+}
