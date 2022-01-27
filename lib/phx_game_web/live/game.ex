@@ -39,12 +39,6 @@ defmodule PhxGameWeb.Game do
   end
 
   def handle_event("solve", _params, socket) do
-    # game_done? =
-    #   case Enum.at(socket.assigns.game_list, socket.assigns.round) do
-    #     nil -> true
-    #     _ -> false
-    #   end
-
     {:noreply,
      assign(socket,
        solved: true,
