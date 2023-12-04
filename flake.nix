@@ -15,7 +15,7 @@
 
       erlang = pkgs.beam.interpreters.erlangR24;
       elixir = pkgs.beam.packages.erlangR24.elixir_1_13;
-      nodejs = pkgs.nodejs-17_x;
+      nodejs = pkgs.nodejs-18_x;
 
       # This is opinionated instead of simple using:
       # pkgs.beam.packages.erlang.hex;

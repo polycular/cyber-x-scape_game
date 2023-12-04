@@ -2,7 +2,7 @@
 
 rec {
   elixir = pkgs.beam.packages.erlangR24.elixir_1_13;
-  nodejs = pkgs.nodejs-17_x;
+  nodejs = pkgs.nodejs-18_x;
 
   LANG = "C.UTF-8";
   MIX_PATH = "${hex}/archives/hex-${hex.version}/hex-${hex.version}/ebin";
