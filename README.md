@@ -76,6 +76,19 @@ npm prune --prefix assets
 nix flake check
 ```
 
+## Deployment
+
+Deployment is literally as easy as:
+
+1. Push to GitHub
+2. Run deploy script
+
+```pwsh
+./pkg/bin/deploy.ps1
+```
+
+More details documented at [guides/deploy.md](./guides/deploy.md).
+
 ## Founding
 
 Supported by the funding campaign [netidee.at](https://netidee.at/).
@@ -90,4 +103,5 @@ The [license](LICENSE) applies only to the code in this repository.
 Product names, logos, texts and other assets are explicitly excluded.
 
 ---
+
 > **Initiator:** Polycular e.U. / [polycular.com](https://www.polycular.com)

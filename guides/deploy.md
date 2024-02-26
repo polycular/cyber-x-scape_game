@@ -1,6 +1,6 @@
 # Deploy
 
-**Sync source & run remote release script**
+**Run remote release script**
 
 ```pwsh
 ./pkg/bin/deploy.ps1
@@ -10,14 +10,6 @@
 
 ```sh
 doas nixos-rebuild switch --rollback
-```
-
-## Manual tasks
-
-**Sync source to server**
-
-```sh
-sh ./pkg/bin/sync_source.sh
 ```
 
 ## Service management
