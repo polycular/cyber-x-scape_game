@@ -2,6 +2,8 @@
 
 **Run remote release script**
 
+Note: The script will pull changes via GitHub deploy key.
+
 ```pwsh
 ./pkg/bin/deploy.ps1
 ```
