@@ -92,16 +92,9 @@ But with the requirement you have local SSH access to `cxs_app_server` also name
 Example configuration of your SSH config file could be:
 
 ```sh
-Host htz_proxmox_sshproxy
-  HostName ex51-p1-01.htz.infra.polycular.com
-  User sshproxy
-  # IdentityFile sshproxy_ed25519
-  IdentityFile ./keys/sshproxy_ed25519
-
 Host antibiotix cxs_app_server
-  HostName 10.10.10.140
+  HostName 10.125.0.140
   User main
-  ProxyJump htz_proxmox_sshproxy
   IdentityFile ./keys/service_ed25519
 ```
 
